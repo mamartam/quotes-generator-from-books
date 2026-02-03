@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: "Merriweather";
+  src: url("../assets/fonts/Merriweather/Merriweather-VariableFont_opsz,wdth,wght.ttf");
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
+}
+body {
+  min-height: 100vh;
+  background-image: url("../assets/images/body-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+}
+main {
+  margin: 25px;
+  width: 350px;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quote {
+  margin-bottom: 25px;
+  line-height: 1.5em;
+  text-align: center;
+  font-family: "Merriweather";
+  font-size: 1.25em;
+}
+.about-author {
+  margin-bottom: 25px;
+  text-align: center;
+  line-height: 1.25em;
+  font-size: 1em;
+}
+.from-info {
+  font-size: 0.75em;
+}
+.generate-new-quote-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: none;
+  background-color: #222c1d;
+  padding: 10px 25px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  border: 0.5px solid;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-family: "Inter";
+  animation-name: animationForButton;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition:
+    border-color 0.3s linear,
+    color 0.3s linear,
+    background-color 0.3s linear;
+}
+/* .generate-new-quote-btn:hover {
+  border-color: #222c1d;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: #222c1d;
+} */
+.generate-new-quote-btn span {
+  z-index: 3;
+}
+.generate-new-quote-btn img {
+  position: absolute;
+  z-index: 2;
+  width: 15px;
+  height: 15px;
+}
+.left-mark {
+  top: -20px;
+  left: 5px;
+  transition: transform 0.3s linear;
+}
+.right-mark {
+  bottom: -20px;
+  right: 5px;
+  transition: transform 0.3s linear;
+}
+.generate-new-quote-btn:hover .left-mark {
+  transform: translateY(25px);
+}
+.generate-new-quote-btn:hover .right-mark {
+  transform: translateY(-25px);
+}
+@keyframes animationForButton {
+  0% {
+    box-shadow: -3px -3px 15px rgba(255, 255, 255, 0.75);
+  }
+  25% {
+    box-shadow: -3px 3px 15px rgba(255, 255, 255, 0.75);
+  }
+  50% {
+    box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.75);
+  }
+  75% {
+    box-shadow: 3px -3px 15px rgba(255, 255, 255, 0.75);
+  }
+  100% {
+    box-shadow: -3px -3px 15px rgba(255, 255, 255, 0.75);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  main {
+    width: 500px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+  main {
+    width: 600px;
+  }
+}
